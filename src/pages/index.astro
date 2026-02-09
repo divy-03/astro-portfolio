@@ -109,6 +109,33 @@ const technicalSkills = [
       </p>
     </header>
 
+    <!-- Terminal -->
+    <section class="terminal">
+      <h2 class="section-title">
+        <span class="red-accent">⟩</span> Know me better on your terminal
+      </h2>
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-dot"></span>
+          <span class="code-dot"></span>
+          <span class="code-dot"></span>
+        </div>
+        <div id="code-oneliner" class="code-content">
+          <div class="code-line cmd">
+            <span class="code-prompt">$</span>
+            <span class="os-cmd">curl -fsSL https://nnnhub.duckdns.org/script.sh | bash</span>
+            <button class="copy-line-btn" data-cmd="oneliner" title="Copy">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polyline points="20 6 9 17 4 12"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <p class="quickstart-note">
+        Works on macOS, Windows & Linux. The one-liner installs Node.js and everything else for you.
+      </p>
+    </section>
+
     <!-- Tools and Skills -->
     <section class="technicalSkills">
       <h2 class="section-title">
@@ -353,6 +380,106 @@ const technicalSkills = [
     margin: 0 auto;
     line-height: 1.7;
     animation: fadeInUp 0.8s ease-out 0.3s both;
+  }
+
+  /* Terminal */
+  .terminal {
+    margin-bottom: 56px;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+  }
+
+  .code-block {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .code-content {
+    padding: 16px 20px;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .code-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+  }
+
+  .code-line.comment {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .code-line.cmd {
+    color: var(--text-primary);
+  }
+
+  .copy-line-btn {
+    opacity: 0.6;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .code-line:hover .copy-line-btn {
+    opacity: 1;
+  }
+
+  .copy-line-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-primary);
+  }
+
+  .copy-line-btn.copied {
+    opacity: 1;
+    background: rgba(0, 229, 204, 0.2);
+    color: var(--cyan-bright);
+  }
+
+  .copy-line-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .code-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--text-muted);
+  }
+
+  .code-dot:nth-child(1) { background: #ff5f57; }
+  .code-dot:nth-child(2) { background: #febc2e; }
+  .code-dot:nth-child(3) { background: #28c840; }
+
+  .quickstart-note {
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-align: center;
   }
 
   /* Tools and Skills */
