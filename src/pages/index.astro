@@ -150,9 +150,9 @@ const technicalSkills = [
     content: "";
     position: fixed;
     inset: 0;
-    background-repeat: repeat;
     pointer-events: none;
     z-index: 0;
+    will-change: transform, opacity;
   }
 
   /* Base star layer */
@@ -166,10 +166,13 @@ const technicalSkills = [
       radial-gradient(1px 1px at 250px 150px, rgba(255,255,255,0.6), transparent),
       radial-gradient(2px 2px at 300px 40px, rgba(255,77,77,0.6), transparent);
     background-size: 400px 250px;
-    animation: stars-drift 120s linear infinite, stars-twinkle 6s ease-in-out infinite alternate;
+
+    animation:
+      stars-move 180s linear infinite,
+      stars-twinkle 6s ease-in-out infinite alternate;
   }
 
-  /* Smaller, faster twinkling stars */
+  /* Smaller stars */
   .stars::before {
     background-image:
       radial-gradient(1px 1px at 50px 80px, rgba(255,255,255,0.8), transparent),
@@ -177,47 +180,59 @@ const technicalSkills = [
       radial-gradient(1px 1px at 300px 100px, rgba(255,255,255,0.7), transparent),
       radial-gradient(1px 1px at 400px 50px, rgba(0,229,204,0.7), transparent);
     background-size: 500px 300px;
-    animation: stars-drift 180s linear infinite, stars-twinkle-fast 4s ease-in-out infinite alternate;
+
+    animation:
+      stars-move-slow 260s linear infinite,
+      stars-twinkle-fast 4s ease-in-out infinite alternate;
     opacity: 0.8;
   }
 
-  /* Bigger, slower stars */
+  /* Bigger stars */
   .stars::after {
     background-image:
       radial-gradient(3px 3px at 100px 150px, rgba(255,255,255,0.9), transparent),
       radial-gradient(2px 2px at 350px 200px, rgba(255,77,77,0.8), transparent),
       radial-gradient(3px 3px at 500px 80px, rgba(0,229,204,0.8), transparent);
     background-size: 600px 400px;
-    animation: stars-drift-slow 240s linear infinite, stars-twinkle-slow 9s ease-in-out infinite alternate;
+
+    animation:
+      stars-move-fast 120s linear infinite,
+      stars-twinkle-slow 9s ease-in-out infinite alternate;
     opacity: 0.7;
   }
 
-  /* Movement */
-  @keyframes stars-drift {
-    from { background-position: 0 0; }
-    to { background-position: -1000px 500px; }
+  /* 🚀 GPU-friendly movement (transform only) */
+  @keyframes stars-move {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-300px, 150px, 0); }
   }
 
-  @keyframes stars-drift-slow {
-    from { background-position: 0 0; }
-    to { background-position: -600px 300px; }
+  @keyframes stars-move-slow {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-200px, 100px, 0); }
   }
 
-  /* Twinkle (desynced) */
+  @keyframes stars-move-fast {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-400px, 200px, 0); }
+  }
+
+  /* ✨ Twinkle (opacity only = cheap) */
   @keyframes stars-twinkle {
-    0%   { opacity: 0.4; }
-    100% { opacity: 0.9; }
+    from { opacity: 0.5; }
+    to   { opacity: 0.9; }
   }
 
   @keyframes stars-twinkle-fast {
-    0%   { opacity: 0.3; transform: scale(0.9); }
-    100% { opacity: 1;   transform: scale(1.05); }
+    from { opacity: 0.4; }
+    to   { opacity: 1; }
   }
 
   @keyframes stars-twinkle-slow {
-    0%   { opacity: 0.5; }
-    100% { opacity: 0.85; }
+    from { opacity: 0.6; }
+    to   { opacity: 0.85; }
   }
+
   /* Nebula Gradient */
   .nebula {
     position: fixed;
