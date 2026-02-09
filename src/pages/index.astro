@@ -1,8 +1,83 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import {
+  siTypescript,
+  siExpress,
+  siDocker,
+  siLinux,
+  siRedis,
+  siReact,
+  siNextdotjs,
+  siPython,
+  siFastapi,
+  siPostgresql,
+  siMysql,
+  siPrisma,
+  siMongodb,
+  siRedux,
+  siSass,
+  siTailwindcss,
+  siGraphql,
+  siNginx,
+  siWeb3dotjs,
+  siPrometheus,
+  siGrafana,
+  siSocketdotio,
+  siRabbitmq,
+  siApachekafka,
+  siJest,
+  siN8n,
+  siGithubactions,
+  siModelcontextprotocol,
+  siJsonwebtokens,
+} from "simple-icons";
+
+const siIcon = (icon: any) => icon.path;
+
+const technicalSkills = [
+  { name: "TypeScript", icon: siIcon(siTypescript), color: "#3178C6" },
+  { name: "Express.js", icon: siIcon(siExpress), color: "#FFFFFF" },
+  { name: "Docker", icon: siIcon(siDocker), color: "#2496ED" },
+  { name: "Linux", icon: siIcon(siLinux), color: "#FCC624" },
+  { name: "CI/CD", icon: siIcon(siGithubactions), color: "#2088FF" },
+
+  { name: "Redis", icon: siIcon(siRedis), color: "#DC382D" },
+  { name: "React", icon: siIcon(siReact), color: "#61DAFB" },
+  { name: "Next.js", icon: siIcon(siNextdotjs), color: "#FFFFFF" },
+  { name: "JWT", icon: siIcon(siJsonwebtokens), color: "#F59E0B" },
+
+  { name: "Python", icon: siIcon(siPython), color: "#3776AB" },
+  { name: "FastAPI", icon: siIcon(siFastapi), color: "#009688" },
+  { name: "React Native", icon: siIcon(siReact), color: "#61DAFB" },
+
+  { name: "PostgreSQL", icon: siIcon(siPostgresql), color: "#4169E1" },
+  { name: "MySQL", icon: siIcon(siMysql), color: "#4479A1" },
+  { name: "Prisma", icon: siIcon(siPrisma), color: "#2D3748" },
+  { name: "MongoDB", icon: siIcon(siMongodb), color: "#47A248" },
+
+  { name: "Redux", icon: siIcon(siRedux), color: "#764ABC" },
+  { name: "Sass", icon: siIcon(siSass), color: "#CC6699" },
+  { name: "Tailwind CSS", icon: siIcon(siTailwindcss), color: "#06B6D4" },
+  { name: "GraphQL", icon: siIcon(siGraphql), color: "#E10098" },
+
+  { name: "Nginx", icon: siIcon(siNginx), color: "#009639" },
+  { name: "Web3", icon: siIcon(siWeb3dotjs), color: "#F16822" },
+
+  { name: "Prometheus", icon: siIcon(siPrometheus), color: "#E6522C" },
+  { name: "Grafana", icon: siIcon(siGrafana), color: "#F46800" },
+
+  { name: "Socket.io", icon: siIcon(siSocketdotio), color: "#FFFFFF" },
+
+  { name: "RabbitMQ", icon: siIcon(siRabbitmq), color: "#FF6600" },
+  { name: "Kafka", icon: siIcon(siApachekafka), color: "#FFFFFF" },
+
+  { name: "Jest", icon: siIcon(siJest), color: "#C21325" },
+
+  { name: "MCP Server", icon: siIcon(siModelcontextprotocol), color: "#38BDF8" },
+  { name: "n8n", icon: siIcon(siN8n), color: "#EA4B71" },
+];
 ---
 
 <Layout title="Divy Pathak">
@@ -13,7 +88,7 @@ import Layout from '../layouts/Layout.astro';
     <!-- Hero Section -->
     <header class="hero">
       <div class="penguLogo" aria-hidden="true">
-        <img class="penguImg" src="../../public/penguLogo.png" alt="pengu">
+        <img class="penguImg" src="/penguLogo.png" alt="pengu">
       </div>
 
       <h1 class="title"><span class="title-main">Divy Pathak</span></h1>
@@ -24,6 +99,22 @@ import Layout from '../layouts/Layout.astro';
         A developer who lives in the terminal, runs on coffee, builds on the web, and dreams like a footballer.
       </p>
     </header>
+
+    <!-- Tools and Skills -->
+    <section class="technicalSkills">
+      <h2 class="section-title">
+        <span class="red-accent">⟩</span> Tools and Skills
+      </h2>
+      <div class="skills-row">
+        {technicalSkills.map((p) => (
+          <span class="skills-pill">
+            <Icon icon={p.icon} color={p.color} size={16} />
+            <span>{p.name}</span>
+          </span>
+        ))}
+      </div>
+    </section>
+
   </main>
 </Layout>
 
@@ -125,6 +216,8 @@ import Layout from '../layouts/Layout.astro';
     flex-direction: column;
   }
 
+  /* Hero */
+
   .hero {
     text-align: center;
     margin-bottom: 56px;
@@ -132,8 +225,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   @keyframes fadeInUp {
-    from {
-      opacity: 0;
+    from { opacity: 0;
       transform: translateY(20px);
     }
     to {
@@ -223,6 +315,49 @@ import Layout from '../layouts/Layout.astro';
     animation: fadeInUp 0.8s ease-out 0.3s both;
   }
 
+  /* Tools and Skills */
+  .technicalSkills {
+    margin-bottom: 56px;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+  }
+
+  .skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .skills-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(10, 15, 26, 0.6);
+    backdrop-filter: blur(8px);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+
+  }
+
+
+  .skills-pill :global(svg) {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+  }
+
+  .skills-pill:hover {
+    border-color: var(--coral-bright);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--coral-bright) 20%, transparent);
+  }
 
 
 </style>
