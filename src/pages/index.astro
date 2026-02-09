@@ -36,45 +36,54 @@ import {
 
 const siIcon = (icon: any) => icon.path;
 
-const technicalSkills = [
-  { name: "TypeScript", icon: siIcon(siTypescript), color: "#3178C6" },
-  { name: "Express.js", icon: siIcon(siExpress), color: "#FFFFFF" },
-  { name: "Docker", icon: siIcon(siDocker), color: "#2496ED" },
-  { name: "Linux", icon: siIcon(siLinux), color: "#FCC624" },
-  { name: "CI/CD", icon: siIcon(siGithubactions), color: "#2088FF" },
 
-  { name: "Redis", icon: siIcon(siRedis), color: "#DC382D" },
+const technicalSkills = [
+  // Languages
+  { name: "TypeScript", icon: siIcon(siTypescript), color: "#3178C6" },
+  { name: "Python", icon: siIcon(siPython), color: "#3776AB" },
+
+  // Frontend / Fullstack Frameworks
   { name: "React", icon: siIcon(siReact), color: "#61DAFB" },
   { name: "Next.js", icon: siIcon(siNextdotjs), color: "#FFFFFF" },
-  { name: "JWT", icon: siIcon(siJsonwebtokens), color: "#F59E0B" },
+  // { name: "React Native", icon: siIcon(siReact), color: "#61DAFB" },
 
-  { name: "Python", icon: siIcon(siPython), color: "#3776AB" },
+  // Backend Frameworks
+  { name: "Express.js", icon: siIcon(siExpress), color: "#FFFFFF" },
   { name: "FastAPI", icon: siIcon(siFastapi), color: "#009688" },
-  { name: "React Native", icon: siIcon(siReact), color: "#61DAFB" },
 
+  // Auth / API
+  { name: "JWT", icon: siIcon(siJsonwebtokens), color: "#F59E0B" },
+  { name: "GraphQL", icon: siIcon(siGraphql), color: "#E10098" },
+
+  // Databases / ORM
   { name: "PostgreSQL", icon: siIcon(siPostgresql), color: "#4169E1" },
   { name: "MySQL", icon: siIcon(siMysql), color: "#4479A1" },
-  { name: "Prisma", icon: siIcon(siPrisma), color: "#2D3748" },
   { name: "MongoDB", icon: siIcon(siMongodb), color: "#47A248" },
+  { name: "Prisma", icon: siIcon(siPrisma), color: "#2D3748" },
+  { name: "Redis", icon: siIcon(siRedis), color: "#DC382D" },
 
+  // State / Styling
   { name: "Redux", icon: siIcon(siRedux), color: "#764ABC" },
   { name: "Sass", icon: siIcon(siSass), color: "#CC6699" },
   { name: "Tailwind CSS", icon: siIcon(siTailwindcss), color: "#06B6D4" },
-  { name: "GraphQL", icon: siIcon(siGraphql), color: "#E10098" },
 
+  // Infra / DevOps
+  { name: "Docker", icon: siIcon(siDocker), color: "#2496ED" },
+  { name: "Linux", icon: siIcon(siLinux), color: "#FCC624" },
+  { name: "CI/CD", icon: siIcon(siGithubactions), color: "#2088FF" },
   { name: "Nginx", icon: siIcon(siNginx), color: "#009639" },
-  { name: "Web3", icon: siIcon(siWeb3dotjs), color: "#F16822" },
 
-  { name: "Prometheus", icon: siIcon(siPrometheus), color: "#E6522C" },
-  { name: "Grafana", icon: siIcon(siGrafana), color: "#F46800" },
-
+  // Realtime / Messaging
   { name: "Socket.io", icon: siIcon(siSocketdotio), color: "#FFFFFF" },
 
-  { name: "RabbitMQ", icon: siIcon(siRabbitmq), color: "#FF6600" },
-  { name: "Kafka", icon: siIcon(siApachekafka), color: "#FFFFFF" },
+  // { name: "Web3", icon: siIcon(siWeb3dotjs), color: "#F16822" },
+  // { name: "Prometheus", icon: siIcon(siPrometheus), color: "#E6522C" },
+  // { name: "Grafana", icon: siIcon(siGrafana), color: "#F46800" },
+  // { name: "RabbitMQ", icon: siIcon(siRabbitmq), color: "#FF6600" },
+  // { name: "Kafka", icon: siIcon(siApachekafka), color: "#FFFFFF" },
+  // { name: "Jest", icon: siIcon(siJest), color: "#C21325" },
 
-  { name: "Jest", icon: siIcon(siJest), color: "#C21325" },
-
+  // Platforms / Tooling
   { name: "MCP Server", icon: siIcon(siModelcontextprotocol), color: "#38BDF8" },
   { name: "n8n", icon: siIcon(siN8n), color: "#EA4B71" },
 ];
@@ -119,6 +128,22 @@ const technicalSkills = [
 </Layout>
 
 <style>
+
+  .red-accent {
+    color: var(--coral-bright);
+    font-weight: 700;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
   .stars,
   .stars::before,
   .stars::after {
