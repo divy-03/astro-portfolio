@@ -1,5 +1,4 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -7,5 +6,223 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Divy Pathak">
-	<Welcome />
+  <div class="stars"></div>
+  <div class="nebula"></div>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="penguLogo" aria-hidden="true">
+        <img class="penguImg" src="../../public/penguLogo.png" alt="pengu">
+      </div>
+
+      <h1 class="title"><span class="title-main">Divy Pathak</span></h1>
+
+      <p class="tagline" id="tagline">Crafting Backends that don't break.</p>
+
+      <p class="description">
+        A developer who lives in the terminal, runs on coffee, builds on the web, and dreams like a footballer.
+      </p>
+    </header>
+  </main>
 </Layout>
+
+<style>
+  .stars,
+  .stars::before,
+  .stars::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Base star layer */
+  .stars {
+    background-image:
+      radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.9), transparent),
+      radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(2px 2px at 130px 80px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 160px 120px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(2px 2px at 200px 60px, rgba(0,229,204,0.8), transparent),
+      radial-gradient(1px 1px at 250px 150px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(2px 2px at 300px 40px, rgba(255,77,77,0.6), transparent);
+    background-size: 400px 250px;
+    animation: stars-drift 120s linear infinite, stars-twinkle 6s ease-in-out infinite alternate;
+  }
+
+  /* Smaller, faster twinkling stars */
+  .stars::before {
+    background-image:
+      radial-gradient(1px 1px at 50px 80px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(1px 1px at 150px 200px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 300px 100px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 400px 50px, rgba(0,229,204,0.7), transparent);
+    background-size: 500px 300px;
+    animation: stars-drift 180s linear infinite, stars-twinkle-fast 4s ease-in-out infinite alternate;
+    opacity: 0.8;
+  }
+
+  /* Bigger, slower stars */
+  .stars::after {
+    background-image:
+      radial-gradient(3px 3px at 100px 150px, rgba(255,255,255,0.9), transparent),
+      radial-gradient(2px 2px at 350px 200px, rgba(255,77,77,0.8), transparent),
+      radial-gradient(3px 3px at 500px 80px, rgba(0,229,204,0.8), transparent);
+    background-size: 600px 400px;
+    animation: stars-drift-slow 240s linear infinite, stars-twinkle-slow 9s ease-in-out infinite alternate;
+    opacity: 0.7;
+  }
+
+  /* Movement */
+  @keyframes stars-drift {
+    from { background-position: 0 0; }
+    to { background-position: -1000px 500px; }
+  }
+
+  @keyframes stars-drift-slow {
+    from { background-position: 0 0; }
+    to { background-position: -600px 300px; }
+  }
+
+  /* Twinkle (desynced) */
+  @keyframes stars-twinkle {
+    0%   { opacity: 0.4; }
+    100% { opacity: 0.9; }
+  }
+
+  @keyframes stars-twinkle-fast {
+    0%   { opacity: 0.3; transform: scale(0.9); }
+    100% { opacity: 1;   transform: scale(1.05); }
+  }
+
+  @keyframes stars-twinkle-slow {
+    0%   { opacity: 0.5; }
+    100% { opacity: 0.85; }
+  }
+  /* Nebula Gradient */
+  .nebula {
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 20%, rgba(255, 77, 77, 0.12), transparent 50%),
+      radial-gradient(ellipse 60% 60% at 80% 30%, rgba(0, 229, 204, 0.08), transparent 50%),
+      radial-gradient(ellipse 90% 70% at 50% 90%, rgba(255, 77, 77, 0.06), transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 24px 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero {
+    text-align: center;
+    margin-bottom: 56px;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      ransform: translateY(0);
+    }
+  }
+
+  .penguLogo {
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+    animation: float 4s ease-in-out infinite;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .penguLogo:hover {
+    transform: scale(1.1);
+    animation: none;
+  }
+
+  .penguLogo img {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 20px rgba(255, 55, 255, 0.2));
+    transition: filter 0.3s ease;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 10vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .title-main {
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--coral-bright) 50%, var(--cyan-bright) 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 6s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .tagline {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--coral-bright);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.8s ease-out 0.15s both;
+  }
+
+  .tagline.dalek-mode {
+    color: var(--cyan-bright);
+    animation: shake 0.1s ease-in-out infinite;
+    text-shadow: 0 0 10px var(--cyan-glow);
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+  }
+
+  .description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 780px;
+    margin: 0 auto;
+    line-height: 1.7;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+  }
+
+
+
+</style>
