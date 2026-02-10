@@ -533,6 +533,27 @@ const technicalSkills = [
   .code-dot:nth-child(2) { background: #febc2e; }
   .code-dot:nth-child(3) { background: #28c840; }
 
+  .code-block pre {
+    padding: 20px;
+    overflow-x: auto;
+  }
+
+  .code-block code {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  code-comment {
+    color: var(--text-muted);
+  }
+
+  .code-prompt {
+    color: var(--coral-bright);
+    user-select: none;
+  }
+
   .terminal-note {
     margin-top: 16px;
     font-size: 0.9rem;
@@ -656,4 +677,73 @@ const technicalSkills = [
     color: var(--text-muted);
   }
 
+  /* Responsive */
+  @media (max-width: 480px) {
+    .container {
+      padding: 40px 16px 32px;
+    }
+
+    .penguLogo {
+      width: 100px;
+    }
+
+    .cta {
+      padding: 20px 12px;
+    }
+
+    .cta-label {
+      font-size: 0.9rem;
+    }
+
+    /* Terminal responsive */
+    .code-header {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .code-dot {
+      order: 0;
+    }
+
+    .code-content {
+      padding: 12px 14px;
+      font-size: 0.65rem;
+    }
+
+    .code-line {
+      gap: 6px;
+    }
+  }
+
+  /* Accessibility Utilities */
+
+  /* Hides content visually but keeps it available for screen readers */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Global Focus State: Replaces the default browser ring with your theme colors */
+  :focus-visible {
+    outline: 3px solid var(--cyan-bright);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+
+  /* Respect user's system settings for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 </style>
