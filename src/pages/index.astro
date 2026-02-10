@@ -209,6 +209,25 @@ const technicalSkills = [
       </a>
     </nav>
 
+    <!-- Footer -->
+    <footer class="footer">
+      <nav class="footer-nav">
+        <a href="https://drive.google.com/file/d/1Cjw_iFFRNwkDrT93R2uPNsaou3s6YaEf/view?usp=sharing">Resume</a>
+        <span class="footer-separator">·</span>
+        <a href="https://github.com/divy-03/astro-portfolio">Github</a>
+        <span class="footer-separator">·</span>
+        <a href="mailto:pathakdivy03@gmail.com">Mail</a>
+        <span class="footer-separator">·</span>
+        <a href="https://codeforces.com/profile/excl">Codeforces</a>
+        <span class="footer-separator">·</span>
+        <a href="">LeetCode</a>
+        <span class="footer-separator">·</span>
+        <a href="">LinkedIn</a>
+      </nav>
+      <p>Built with passion and code</p>
+      <p class="disclaimer">Inspired from <a href="https://openclaw.ai">OpenClaw.ai</a></p>
+    </footer>
+
   </main>
 </Layout>
 
@@ -675,6 +694,46 @@ const technicalSkills = [
   .cta-sub {
     font-size: 0.8rem;
     color: var(--text-muted);
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: auto;
+    padding-top: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    animation: fadeInUp 0.8s ease-out 0.75s both;
+  }
+
+  .footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+  }
+
+  .footer-separator {
+    color: var(--text-muted);
+  }
+
+  .footer a {
+    color: var(--coral-bright);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer a:hover {
+    color: var(--cyan-bright);
+  }
+
+  .footer .disclaimer {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    opacity: 0.7;
   }
 
   /* Responsive */
