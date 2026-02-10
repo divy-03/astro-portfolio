@@ -1,24 +1,58 @@
 {
   "projects": [
     {
-      "name": "Project 1",
-      "description": "Description of Project 1",
+      "name": "KickBid",
+      "description": "Auction based team formation platform for futsal tournaments with real-time bidding and player stats.",
       "images": [
-        "https://picsum.photos/200/300",
-        "https://picsum.photos/200/300"
+        "https://ik.imagekit.io/excl/Kickbid.png"
       ],
-      "liveLink": "https://example.com/project1",
-      "githubLink": "https://github.com/divy03/project1"
+      "liveLink": "https://kickbid.onrender.com",
+      "githubLink": "https://github.com/divy-03/kickbid-client-js"
     },
     {
-      "name": "Project 2",
-      "description": "Description of Project 2",
+      "name": "Hugo Blog",
+      "description": "A personal blogging platform built with Hugo and customized using the Reimu theme. Deployed on netlify with custom CI/CD pipelines.",
       "images": [
-        "https://picsum.photos/200/300",
-        "https://via.placeholder.com/150"
+        "https://ik.imagekit.io/excl/HugoBlog.png"
       ],
-      "liveLink": "https://example.com/project2",
-      "githubLink": "https://github.com/divy03/project2"
+      "liveLink": "https://blog-excl.netlify.app",
+      "githubLink": "https://github.com/divy-03/hugo-blog-website"
+    },
+    {
+      "name": "Leafman",
+      "description": "A leave management system with separate employee and admin interfaces for applying, tracking, and managing leave requests.",
+      "images": [
+        "https://ik.imagekit.io/excl/Leafman.png"
+      ],
+      "liveLink": "https://leafront.vercel.app",
+      "githubLink": "https://github.com/divy-03/Leafront"
+    },
+    {
+      "name": "Carido",
+      "description": "Features include advanced filtering, detailed car pages, image generation & uploads via ImageKit, and seamless seller-buyer interaction.",
+      "images": [
+        "https://ik.imagekit.io/excl/Carido.png"
+      ],
+      "liveLink": "https://carido.vercel.app",
+      "githubLink": "https://github.com/divy-03/car-app"
+    },
+    {
+      "name": "Supply Setu",
+      "description": "A comprehensive B2B supply chain management platform that connects suppliers and vendors",
+      "images": [
+        "https://ik.imagekit.io/gox6cqdis/SupplySetu.png"
+      ],
+      "liveLink": "https://supplysetu-client.onrender.com",
+      "githubLink": "https://github.com/hackathonseries/Supply-Setu"
+    },
+    {
+      "name": "Portfolio",
+      "description": "Personal Portfolio older version developed to display my gsap, animation skills.",
+      "images": [
+        "https://ik.imagekit.io/gox6cqdis/portfolio.png"
+      ],
+      "liveLink": "https://portfolio-divy.netlify.app",
+      "githubLink": "https://github.com/divy-03/MyPortfolio"
     }
   ]
 }
