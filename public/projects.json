@@ -10,15 +10,6 @@
       "githubLink": "https://github.com/divy-03/kickbid-client-js"
     },
     {
-      "name": "Hugo Blog",
-      "description": "A personal blogging platform built with Hugo and customized using the Reimu theme. Deployed on netlify with custom CI/CD pipelines.",
-      "images": [
-        "https://ik.imagekit.io/excl/HugoBlog.png"
-      ],
-      "liveLink": "https://blog-excl.netlify.app",
-      "githubLink": "https://github.com/divy-03/hugo-blog-website"
-    },
-    {
       "name": "Leafman",
       "description": "A leave management system with separate employee and admin interfaces for applying, tracking, and managing leave requests.",
       "images": [
@@ -44,15 +35,6 @@
       ],
       "liveLink": "https://supplysetu-client.onrender.com",
       "githubLink": "https://github.com/hackathonseries/Supply-Setu"
-    },
-    {
-      "name": "Portfolio",
-      "description": "Personal Portfolio older version developed to display my gsap, animation skills.",
-      "images": [
-        "https://ik.imagekit.io/gox6cqdis/portfolio.png"
-      ],
-      "liveLink": "https://portfolio-divy.netlify.app",
-      "githubLink": "https://github.com/divy-03/MyPortfolio"
     }
   ]
 }
